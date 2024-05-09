@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" version="6.0">
+  <servlet>
+    <description></description>
+    <display-name>CineServlet</display-name>
+    <servlet-name>CineServlet</servlet-name>
+    <servlet-class>servlet.CineServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CineServlet</servlet-name>
+    <url-pattern>/cines</url-pattern>
+  </servlet-mapping>
+  <display-name>webCinestar_Eclipse_4DS</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>PeliculaServlet</display-name>
+    <servlet-name>PeliculaServlet</servlet-name>
+    <servlet-class>servlet.PeliculaServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PeliculaServlet</servlet-name>
+    <url-pattern>/peliculas</url-pattern>
+  </servlet-mapping>
+</web-app>
