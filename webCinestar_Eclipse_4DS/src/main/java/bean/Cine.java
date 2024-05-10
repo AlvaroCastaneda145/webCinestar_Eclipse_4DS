@@ -64,8 +64,8 @@ public class Cine {
 		
 		Detalle = aRegistro[6];
 		
-		distrito.setId( idDistrito );
-		distrito.setDetalle( Detalle );
+		distrito = new  Distrito(id, Detalle);
+		
 	}
 	
 	

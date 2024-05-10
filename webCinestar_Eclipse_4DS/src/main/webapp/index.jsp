@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -8,7 +7,7 @@
 <meta name="viewport"
 	content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <meta name="description"
-	content="Multicines Cinestar es una empresa pionera en el formato de multicines en el Perú. Información de películas, estrenos, concursos y más">
+	content="Multicines Cinestar es una empresa pionera en el formato de multicines en el PerÃº. InformaciÃ³n de pelÃ­culas, estrenos, concursos y mÃ¡s">
 <link rel="shortcut icon" href="img/varios/favicon.ico">
 <link href="css/estilos.css" rel="stylesheet" type="text/css">
 <title>Multicines Cinestar</title>
@@ -17,13 +16,13 @@
 	<header>
 		<nav class="nav-sec">
 			<a href="index.jsp">Inicio</a>&nbsp;&nbsp;l&nbsp;&nbsp; <a
-				href="http://www.cinestar.com.pe/quienes_somos">Quiénes somos</a>&nbsp;&nbsp;l&nbsp;&nbsp;
+				href="http://www.cinestar.com.pe/quienes_somos">QuiÃ©nes somos</a>&nbsp;&nbsp;l&nbsp;&nbsp;
 			<a href="http://www.cinestar.com.pe/trabaja_con_nosotros">Trabaja
 				con nosotros</a>&nbsp;&nbsp;l&nbsp;&nbsp; <a
 				href="https://www.efact.pe/consult.html" target="_blank">Consulta
 				tu comprobante de pago </a>&nbsp;&nbsp;l&nbsp;&nbsp; <a
 				href="http://www.cinestar.com.pe/contactenos/#contenido_titulo"
-				class="anchorLink">Contáctenos</a>
+				class="anchorLink">ContÃ¡ctenos</a>
 		</nav>
 		<div class="area-logo">
 			<a href="index.jsp"><img src="img/varios/logo-cinestar.png" /></a>
@@ -34,10 +33,10 @@
 					src="img/varios/ico-face.png" /></a> <a
 				href="http://www.twitter.com/multicinestar" target="_blank"><img
 					src="img/varios/ico-twitter.png" /></a>
-			</span> <span class="social">Síguenos en: </span>
+			</span> <span class="social">SÃ­guenos en: </span>
 			<ul class="menu-principal">
 				<li class="menu-item"><a href="./peliculas?id=cartelera">Cartelera</a></li>
-				<li class="menu-item"><a href="./peliculas?id=estrenos">Próximos estrenos</a></li>
+				<li class="menu-item"><a href="./peliculas?id=estrenos">PrÃ³ximos estrenos</a></li>
 				<li class="menu-item"><a href="http://www.cinestar.com.pe/starcard">Star Card</a></li>
 				<li class="menu-item"><a href="./cines">Nuestros Cines</a></li>
 				<li class="menu-item"><a href="http://www.cinestar.com.pe/ventas_corporativas">Ventas Corporativas</a></li>
@@ -59,15 +58,19 @@
 				src="img/varios/cinefilo-star.jpg" /></a>
 		</div>
 		<div class="contenido-interno" id="contenido-interno">
-		    <%
-		        Object id = request.getAttribute("id");
-		        if (id != null) {
-		            if (id.equals("cines")) { %>
-		                <%@include file="WEB-INF/cines.jsp" %>
+		   <%
+    Object id = request.getAttribute("id");
+    if (id != null) {
+		        if (id.equals("cines")) { %>
+		            <%@include file="WEB-INF/cines.jsp" %>
 		        <% } else if (id.equals("peliculas")) { %>
-		                <%@include file="WEB-INF/peliculas.jsp" %>
+		            <%@include file="WEB-INF/peliculas.jsp" %>
+		        <% } else if (id.equals("cine")) { %>
+		            <%@include file="WEB-INF/cine.jsp" %>
+		        <% } else if (id.equals("pelicula")) { %>
+		            <%@include file="WEB-INF/pelicula.jsp" %>
 		    <% } %>
-		    <% } %>
+		<% } %>
 		</div>
 	</div>
 	<div class="clearbox">
@@ -75,7 +78,7 @@
 	</div>
 	<footer>
 		<div class="contenido-footer">
-			<p>Copyright © 2016 ® Multicines CINESTAR - Todos los Derechos
+			<p>Copyright Â© 2016 Â® Multicines CINESTAR - Todos los Derechos
 				Reservados</p>
 		</div>
 	</footer>

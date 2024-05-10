@@ -12,20 +12,24 @@ public class PeliculaServlet extends HttpServlet {
 	CinestarDAO cinestarDAO = new CinestarDAO();
        	
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		 String id = request.getParameter("id");
-		    Object data = null;
-		    if (id != null) {
-		        if (id.equals("cartelera")) {
-		            data = cinestarDAO.getPeliculas(1); 
-		        } else if (id.equals("estrenos")) {
-		            data = cinestarDAO.getPeliculas(2); 
-		        }
-		    } 
-		    request.getSession().setAttribute("peliculas", data);
-		    request.setAttribute("id", "peliculas");
-		    request.getRequestDispatcher("index.jsp").forward(request, response);
-	}
-	
+	    String id = request.getParameter("id");
+	    Object data = null;
+
+	    if (id != null) {
+	        if (id.equals("cartelera") || id.equals("estrenos")) {
+	            data = cinestarDAO.getPeliculas(id);
+	            request.setAttribute("id", "peliculas");
+	            request.getSession().setAttribute("peliculas", data); 
+	        } else {
+	            data = cinestarDAO.getPelicula(id);
+	            request.setAttribute("id", "pelicula");
+	            request.getSession().setAttribute("pelicula", data); 
+	        }
+	    }
+
+	    request.getRequestDispatcher("index.jsp").forward(request, response);
+	}													
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		processRequest(request, response);	
 	}
